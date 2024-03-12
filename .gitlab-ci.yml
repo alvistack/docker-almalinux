@@ -138,24 +138,24 @@ build:almalinux-9-docker:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-almalinux-9-docker"
+    key: $CI_PIPELINE_ID-almalinux-9-docker
     paths:
       - packer/*/output-docker
   variables:
-    _IMAGE: "almalinux-9"
-    _PROVIDER: "docker"
+    _IMAGE: almalinux-9
+    _PROVIDER: docker
 
 test:almalinux-9-docker:
   <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-almalinux-9-docker"
+    key: $CI_PIPELINE_ID-almalinux-9-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "almalinux-9"
-    _PROVIDER: "docker"
+    _IMAGE: almalinux-9
+    _PROVIDER: docker
   needs:
     - build:almalinux-9-docker
 
@@ -163,13 +163,13 @@ deploy:almalinux-9-docker:
   <<: *job-docker-push
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-almalinux-9-docker"
+    key: $CI_PIPELINE_ID-almalinux-9-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "almalinux-9"
-    _PROVIDER: "docker"
+    _IMAGE: almalinux-9
+    _PROVIDER: docker
   needs:
     - test:almalinux-9-docker
 
@@ -177,24 +177,24 @@ build:almalinux-8-docker:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-almalinux-8-docker"
+    key: $CI_PIPELINE_ID-almalinux-8-docker
     paths:
       - packer/*/output-docker
   variables:
-    _IMAGE: "almalinux-8"
-    _PROVIDER: "docker"
+    _IMAGE: almalinux-8
+    _PROVIDER: docker
 
 test:almalinux-8-docker:
   <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-almalinux-8-docker"
+    key: $CI_PIPELINE_ID-almalinux-8-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "almalinux-8"
-    _PROVIDER: "docker"
+    _IMAGE: almalinux-8
+    _PROVIDER: docker
   needs:
     - build:almalinux-8-docker
 
@@ -202,12 +202,12 @@ deploy:almalinux-8-docker:
   <<: *job-docker-push
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-almalinux-8-docker"
+    key: $CI_PIPELINE_ID-almalinux-8-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "almalinux-8"
-    _PROVIDER: "docker"
+    _IMAGE: almalinux-8
+    _PROVIDER: docker
   needs:
     - test:almalinux-8-docker
