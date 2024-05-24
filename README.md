@@ -13,16 +13,16 @@ Pulls](https://img.shields.io/docker/pulls/alvistack/almalinux-8.svg)](https://h
 
 AlmaLinux OS is an open-source, community-driven Linux operating system that fills the gap left by the discontinuation of the CentOS Linux stable release. AlmaLinux OS is an Enterprise Linux distro, binary compatible with RHEL®, and guided and built by the community.
 
-As a standalone, completely free OS, AlmaLinux OS enjoys $1M in annual sponsorship from CloudLinux Inc. and support from more than 25 other sponsors. Ongoing development efforts are governed by the members of the community.
+As a standalone, completely free OS, AlmaLinux OS enjoys \$1M in annual sponsorship from CloudLinux Inc. and support from more than 25 other sponsors. Ongoing development efforts are governed by the members of the community.
 
 Learn more about AlmaLinux: <https://almalinux.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
--   [`alvistack/almalinux-9`](https://hub.docker.com/r/alvistack/almalinux-9)
-    -   [`packer/almalinux-9-docker/packer.json`](https://github.com/alvistack/docker-almalinux/blob/master/packer/almalinux-9-docker/packer.json)
--   [`alvistack/almalinux-8`](https://hub.docker.com/r/alvistack/almalinux-8)
-    -   [`packer/almalinux-8-docker/packer.json`](https://github.com/alvistack/docker-almalinux/blob/master/packer/almalinux-8-docker/packer.json)
+- [`alvistack/almalinux-9`](https://hub.docker.com/r/alvistack/almalinux-9)
+  - [`packer/almalinux-9-docker/packer.json`](https://github.com/alvistack/docker-almalinux/blob/master/packer/almalinux-9-docker/packer.json)
+- [`alvistack/almalinux-8`](https://hub.docker.com/r/alvistack/almalinux-8)
+  - [`packer/almalinux-8-docker/packer.json`](https://github.com/alvistack/docker-almalinux/blob/master/packer/almalinux-8-docker/packer.json)
 
 ## Overview
 
@@ -32,11 +32,11 @@ running with AlmaLinux.
 Based on [Official AlmaLinux Docker
 Image](https://hub.docker.com/_/almalinux/) with some minor hack:
 
--   Packaging by Packer Docker builder and Ansible provisioner in single
-    layer
--   Handle `ENTRYPOINT` with
-    [catatonit](https://github.com/openSUSE/catatonit)
--   Handle `CMD` with SSHD
+- Packaging by Packer Docker builder and Ansible provisioner in single
+  layer
+- Handle `ENTRYPOINT` with
+  [catatonit](https://github.com/openSUSE/catatonit)
+- Handle `CMD` with SSHD
 
 ### Quick Start
 
@@ -91,12 +91,12 @@ latest packages provided by the base image project.
 
 ## License
 
--   Code released under [Apache License 2.0](LICENSE)
--   Docs released under [CC BY
-    4.0](http://creativecommons.org/licenses/by/4.0/)
+- Code released under [Apache License 2.0](LICENSE)
+- Docs released under [CC BY
+  4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
--   Wong Hoi Sing Edison
-    -   <https://twitter.com/hswong3i>
-    -   <https://github.com/hswong3i>
+- Wong Hoi Sing Edison
+  - <https://twitter.com/hswong3i>
+  - <https://github.com/hswong3i>
