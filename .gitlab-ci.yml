@@ -134,6 +134,45 @@ default:
     - *script-git-submodule
     - *script-linters
 
+build:almalinux-10-docker:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: $CI_PIPELINE_ID-almalinux-10-docker
+    paths:
+      - packer/*/output-docker
+  variables:
+    _IMAGE: almalinux-10
+    _PROVIDER: docker
+
+test:almalinux-10-docker:
+  <<: *job-molecule-test
+  stage: test
+  cache:
+    key: $CI_PIPELINE_ID-almalinux-10-docker
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: almalinux-10
+    _PROVIDER: docker
+  needs:
+    - build:almalinux-10-docker
+
+deploy:almalinux-10-docker:
+  <<: *job-docker-push
+  stage: deploy
+  cache:
+    key: $CI_PIPELINE_ID-almalinux-10-docker
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: almalinux-10
+    _PROVIDER: docker
+  needs:
+    - test:almalinux-10-docker
+
 build:almalinux-9-docker:
   <<: *job-packer-build
   stage: build

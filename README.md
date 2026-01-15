@@ -9,7 +9,7 @@ tag](https://img.shields.io/github/tag/alvistack/docker-almalinux.svg)](https://
 [![GitHub
 license](https://img.shields.io/github/license/alvistack/docker-almalinux.svg)](https://github.com/alvistack/docker-almalinux/blob/master/LICENSE)
 [![Docker
-Pulls](https://img.shields.io/docker/pulls/alvistack/almalinux-8.svg)](https://hub.docker.com/r/alvistack/almalinux-8)
+Pulls](https://img.shields.io/docker/pulls/alvistack/almalinux-10.svg)](https://hub.docker.com/r/alvistack/almalinux-10)
 
 AlmaLinux OS is an open-source, community-driven Linux operating system that fills the gap left by the discontinuation of the CentOS Linux stable release. AlmaLinux OS is an Enterprise Linux distro, binary compatible with RHEL®, and guided and built by the community.
 
@@ -19,6 +19,8 @@ Learn more about AlmaLinux: <https://almalinux.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
+- [`alvistack/almalinux-10`](https://hub.docker.com/r/alvistack/almalinux-10)
+  - [`packer/almalinux-10-docker/packer.json`](https://github.com/alvistack/docker-almalinux/blob/master/packer/almalinux-10-docker/packer.json)
 - [`alvistack/almalinux-9`](https://hub.docker.com/r/alvistack/almalinux-9)
   - [`packer/almalinux-9-docker/packer.json`](https://github.com/alvistack/docker-almalinux/blob/master/packer/almalinux-9-docker/packer.json)
 - [`alvistack/almalinux-8`](https://hub.docker.com/r/alvistack/almalinux-8)
@@ -43,14 +45,14 @@ Image](https://hub.docker.com/_/almalinux/) with some minor hack:
 Start SSHD:
 
     # Pull latest image
-    docker pull alvistack/almalinux-8
+    docker pull alvistack/almalinux-10
 
     # Run as detach
     docker run \
         -itd \
         --name almalinux \
         --publish 2222:22 \
-        alvistack/almalinux-8
+        alvistack/almalinux-10
 
 **Success**. SSHD is now available on port `2222`.
 
